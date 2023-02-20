@@ -6,12 +6,9 @@ import java.util.Scanner;
 
 public class MainInstrucciónesEncriptadas extends LectorDeTexto {
     public static void main(String[] args) throws IOException {
-        Scanner svc = new Scanner(System.in);
-        System.out.println("ingresa la ruta de entrada de tu archivo");
-        String RutaEntrada = svc.nextLine();
 
         LectorDeTexto lector = new LectorDeTexto();
-        String [] EntradaLeida = lector.lectorEntrada(RutaEntrada);
+        String [] EntradaLeida = lector.lectorEntrada(args[0]);
         try {
 
             EvaluadorEntrada EntradaEvaluada = new EvaluadorEntrada();
@@ -21,11 +18,9 @@ public class MainInstrucciónesEncriptadas extends LectorDeTexto {
         String MsjEncriptado = RemuveDupli.RemovedorDeDuplicados(EntradaAnalizada[3]);
 
 
-        System.out.println("ingresa tu ruta de salida ");
-        String RutaSalida = svc.nextLine();
 
         AnalizadorGanador AnalizadorG = new AnalizadorGanador();
-        AnalizadorG.Analizador(EntradaAnalizada,MsjEncriptado,RutaSalida);
+        AnalizadorG.Analizador(EntradaAnalizada,MsjEncriptado,args[1]);
     }catch (Exception exception ){
         System.out.println(exception.getMessage());
     }
