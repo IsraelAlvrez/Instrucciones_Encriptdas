@@ -17,7 +17,12 @@ public class AnalizadorGanador {
         FileWriter escritor = new FileWriter(resultados);
         BufferedWriter bw=new BufferedWriter(escritor);
 
-        if (Encriptado.contains(Inst_1)){
+
+
+        if (Encriptado.contains(Inst_1)&&Encriptado.contains(Inst_2)){
+            throw new  IllegalArgumentException("tu encriptado no puede tener las 2 instrucciones");
+        }
+        else if (Encriptado.contains(Inst_1)){
             bw.write("Si");
             bw.newLine();
             bw.write("no ");
