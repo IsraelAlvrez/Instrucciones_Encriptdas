@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class MainInstrucciónesEncriptadas extends LectorDeTexto {
+public class MainInstrucciónesEncriptadas  {
     public static void main(String[] args) throws IOException {
 
         LectorDeTexto lector = new LectorDeTexto();
